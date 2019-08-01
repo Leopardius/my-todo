@@ -14,6 +14,9 @@ export class TodoItemState {
     this.value = value;
   }
 
+  @a public setIsEditMode = (value: boolean = true) => {
+    this.isEditMode = value;
+  };
   @a public editName = (name: string) => {
     this.value.name = name;
   };

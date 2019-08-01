@@ -1,6 +1,5 @@
 import React, { ChangeEventHandler } from 'react';
 import { observer } from 'mobx-react';
-import { action as a } from 'mobx';
 import { TodoItemState } from './TodoItemState';
 import { EditModal } from 'components/EditModal';
 import classNames from 'classnames';
@@ -37,19 +36,19 @@ export class TodoItem extends React.Component<ITodoItemProps> {
     );
   }
 
-  @a private handleSubmitEditName = (name: string) => {
+  private handleSubmitEditName = (name: string) => {
     const { todo } = this.props;
     todo.editName(name);
     this.closeEditModal();
   };
 
-  @a private closeEditModal = () => {
+  private closeEditModal = () => {
     const { todo } = this.props;
-    todo.isEditMode = false;
+    todo.setIsEditMode(false);
   };
-  @a private openEditModal = () => {
+  private openEditModal = () => {
     const { todo } = this.props;
-    todo.isEditMode = true;
+    todo.setIsEditMode();
   };
 
   render() {
