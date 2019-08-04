@@ -7,7 +7,7 @@ export interface ITodoItem {
 }
 
 export class TodoItemState {
-  @o public value: ITodoItem;
+  @o public readonly value: ITodoItem;
   @o public isEditMode: boolean = false;
 
   constructor(value: ITodoItem) {
